@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "2facc6ae-f783-410b-ab1c-e8c9f3eecb22",
+		"name": "JENKINS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Daily Copy",
+			"item": [
+				{
+					"name": "http://accuweather-api-glacier-northcentral-us.cloudapp.net//forecasts/v1/daily/349727.json?apikey=5251445912b143d8b4bee5a741762dd1&language=en-us&details=True&metric=False&dayCount=21&startDate=2019-05-08T00:00:00Z",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ncus-gadc-api-production.trafficmanager.net/forecasts/v1/daily/348181.json?apikey=5251445912b143d8b4bee5a741762dd1&language=en-us&details=True&metric=False&dayCount=21&startDate=2019-05-08T00:00:00Z",
+							"protocol": "http",
+							"host": [
+								"ncus-gadc-api-production",
+								"trafficmanager",
+								"net"
+							],
+							"path": [
+								"forecasts",
+								"v1",
+								"daily",
+								"348181.json"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "5251445912b143d8b4bee5a741762dd1"
+								},
+								{
+									"key": "language",
+									"value": "en-us"
+								},
+								{
+									"key": "details",
+									"value": "True"
+								},
+								{
+									"key": "metric",
+									"value": "False"
+								},
+								{
+									"key": "dayCount",
+									"value": "21"
+								},
+								{
+									"key": "startDate",
+									"value": "2019-05-08T00:00:00Z"
+								}
+							]
+						},
+						"description": "The startDate needs to be changed. The startDate is calculated as prior-most-Monday (or today if today is Monday) + page * 21 days. This is based on UTC. Eg. Page 1 on 3/12/19 is 2019-04-01T00:00:00Z\r\n\r\nTo change the location you will need to modify the state college key to another location key.\r\n\r\nAlso note: the maximum number of days that we have a forecast for is 90 (from today). Note that the last page (page=4) will only have 1-2 weeks because of this (rather than the full 3 weeks we ask for).\r\n\r\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
